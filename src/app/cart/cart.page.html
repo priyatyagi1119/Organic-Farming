@@ -1,0 +1,310 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-buttons >
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-buttons>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button >
+        <ion-icon name="notifications-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <h1 class="title">Cart</h1>
+
+  <div >
+    <ion-card >
+      <ion-card-content>
+        <div >
+          <ion-grid>
+            <ion-row>
+              <ion-col size="5">
+          <img src="assets/icon/fruits.jpg" height="150px" width="150px"/>
+        </ion-col ><ion-col>
+          <p><b>Apple</b></p>
+          <p><b>TS Farms</b></p>
+          <p><b>$34.00</b></p>
+          <p style="color:green">In Stock</p>
+        </ion-col>
+        <ion-col><ion-card width="150px">
+          <ion-icon name="remove-circle-outline" size="large"></ion-icon>
+          <ion-label>1</ion-label>
+    <ion-icon name="add-circle-outline" size="large"></ion-icon>
+  </ion-card></ion-col>
+        </ion-row>
+        </ion-grid>
+          <div >
+            <ion-grid>
+              <ion-row>
+                <ion-col size="3" >
+                  <ion-card width="150px">
+                  <ion-icon name="remove-circle-outline" size="large"></ion-icon>
+                  <ion-label>1</ion-label>
+            <ion-icon name="add-circle-outline" size="large"></ion-icon>
+          </ion-card></ion-col>
+          </ion-row>
+          <ion-col>
+            <ion-col>
+              <ion-button shape="round">Delete</ion-button>
+              <ion-button shape="round">Save for later</ion-button>
+            </ion-col>
+          </ion-col>
+          </ion-grid>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+    <ion-button expand="block" (click)="user()">Continue</ion-button>
+  
+
+
+
+
+
+ <!--<ion-header>
+  <ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button color="primary"  >
+      <img   src="assets/icon/mill.jpg" height="20px" width="20px" />
+   </ion-button>
+  </ion-buttons>
+  <ion-buttons slot="end">
+  <ion-button>
+  <ion-icon name="notifications-outline" color="dark"></ion-icon>
+  </ion-button>
+    </ion-buttons>
+     </ion-toolbar>  
+    </ion-header>
+    <ion-content>
+    <h1 class="title">My Orders</h1>
+    <div >
+      <ion-card >
+      <ion-card-content>
+      <div >
+        <img   src="assets/icon/mill.jpg" />
+      </div>
+     <div >
+      <p>Millet</p>
+      <p>Hemant's Farm</p>
+      <p>$50</p>
+     
+      </div>
+    </ion-card-content>
+    </ion-card>
+    </div>
+    </ion-content> --> 
+    
+
+
+    <!-- <ion-content fullscreen>
+      
+      <div >
+        <ion-button  fill="clear" color="dark">
+          <ion-icon name="close" slot="start"></ion-icon>
+        </ion-button>
+      </div>
+    
+      <div >
+        <ion-list>
+          <ion-item >
+            <ion-grid>
+              <ion-row >
+                <ion-col size="2" >
+                  <ion-button
+                    color="medium"
+                    fill="clear"
+                    
+                  >
+                    <ion-icon name="remove-circle" slot="icon-only"></ion-icon>
+                  </ion-button>
+                </ion-col>
+    
+                <ion-col size="1" >
+                  500
+                </ion-col>
+    
+                <ion-col size="2" >
+                  <ion-button
+                    color="medium"
+                    fill="clear"
+                   
+                  >
+                    <ion-icon name="add-circle" slot="icon-only"></ion-icon>
+                  </ion-button>
+                </ion-col>
+    
+                <ion-col size="2" offset="5">
+                  <ion-button
+                    color="medium"
+                    fill="clear"
+                    
+                  >
+                    <ion-icon name="close-circle" slot="icon-only"></ion-icon>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+    
+              <ion-row>
+                <ion-col size="9">
+                  <b>Apple</b>
+                </ion-col>
+                <ion-col size="3" class="ion-text-end">
+                 1000
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+          <ion-item>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="9"> Total: </ion-col>
+                <ion-col size="3">
+                  2000
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        </ion-list>
+    
+        <ion-button expand="full" > Checkout </ion-button>
+      </div>
+    </ion-content> -->
+
+
+
+
+    <!-- <ion-header>
+      <ion-toolbar color="danger">
+    
+        <ion-title>
+          Review Your Cart
+        </ion-title>
+    
+        <ion-button color="clear" size="small" slot="end" >
+          <ion-icon name="close"></ion-icon>
+        </ion-button>
+    
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+     
+        <div >
+       
+          <ion-list >
+            <ion-item >
+              <ion-grid>
+                <ion-row >
+                  <ion-col size="2" >
+                    <ion-button color="medium" fill="clear" >
+                      <ion-icon name="remove-circle" slot="icon-only"></ion-icon>
+                    </ion-button>
+                  </ion-col>
+       
+                  <ion-col size="1" >
+                    2
+                  </ion-col>
+       
+                  <ion-col size="2" >
+                    <ion-button color="medium" fill="clear" >
+                      <ion-icon name="add-circle" slot="icon-only"></ion-icon>
+                    </ion-button>
+                  </ion-col>
+       
+                  <ion-col size="2" offset="5">
+                    <ion-button color="medium" fill="clear" >
+                      <ion-icon name="close-circle" slot="icon-only"></ion-icon>
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col size="9">
+                    <b>Apple</b>
+                  </ion-col>
+                  <ion-col size="3" >
+                   2*1000
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+            <ion-item>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="9">
+                    Total:
+                  </ion-col>
+                  <ion-col size="3" class="ion-text-end">
+                    2000
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-list>
+       
+          <ion-button expand="full" color="dark" >
+            Pay Now
+          </ion-button>
+    
+          <ion-list >
+            <ion-item>You cart is empty.</ion-item>
+          </ion-list>
+        </div>
+       
+      </ion-content> -->
+
+
+
+      <!-- <ion-header [translucent]="true">
+        <ion-toolbar>
+          <ion-title>
+            Fruit Shop Online
+          </ion-title>
+      
+          <ion-button color="dark" size="small" slot="end">
+            2
+            <ion-icon name="cart" slot="end"></ion-icon>
+          </ion-button>
+        </ion-toolbar>
+      </ion-header>
+      
+      <ion-content [fullscreen]="true">
+        <ion-list>
+          <ion-card >
+              <ion-card-header>
+                <ion-card-title>Apple</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-row>
+                  <ion-col size="8">
+                    <ion-label color="secondary">
+                      <b>500</b>
+                    </ion-label>
+                  </ion-col>
+                  <ion-col size="4" class="ion-text-right">
+                    <ion-button color="dark" size="small" >
+                      ADD TO CART
+                      <ion-icon name="cart" slot="end"></ion-icon>
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-card-content>
+          </ion-card>
+        </ion-list>
+      
+        
+      </ion-content> -->
+
+
+
+
+
+
+
+
+

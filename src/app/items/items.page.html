@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+   <ion-title>Add Item</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+  <ion-card> 
+    <ion-card-header collapse="condense" color="success">
+    <ion-icon name="arrow-back-circle-outline"slot="start"size="large"color="white"></ion-icon><ion-card-title size="large"><b>Add Item</b></ion-card-title></ion-card-header><br> 
+      <ion-item>
+        <ion-icon name="rose-outline" slot="end"></ion-icon>
+        <ion-select color="success" placeholder="Item Name" fill="outline">Item Name
+          <ion-select-option>Apple</ion-select-option>
+          <ion-select-option>Orange</ion-select-option>
+          <ion-select-option>Banana</ion-select-option>
+          <ion-select-option>Grapes</ion-select-option>
+          <ion-select-option>Pineapple</ion-select-option>
+          <ion-select-option>Pear</ion-select-option>
+          <ion-select-option>Cucumber</ion-select-option>
+          <ion-select-option>Potato</ion-select-option>
+          <ion-select-option>Onion</ion-select-option>
+          <ion-select-option>Tomato</ion-select-option>
+          <ion-select-option>Carrot</ion-select-option>
+          <ion-select-option>Cauliflower</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-icon name="pencil-outline" slot="end"></ion-icon>
+        <ion-label position="floating">Description</ion-label>
+        <ion-textarea  color="success" placeholder="Description"></ion-textarea>
+      </ion-item>
+      <br>
+      <ion-row>
+        <ion-col size="6">
+      <ion-item>
+        <ion-icon name="cash-outline" slot="end"></ion-icon>
+        <ion-label position="floating">Amount</ion-label>
+        <ion-input  color="success" placeholder="Amount"></ion-input>
+      </ion-item>
+</ion-col>
+<ion-col size="6">
+      <ion-item>
+        <ion-icon name="location-outline" slot="end"></ion-icon>
+        <ion-select color="success" placeholder="Radius" fill="outline">Radius
+        <ion-select-option>1km-10km</ion-select-option>
+        <ion-select-option>11km-20km</ion-select-option>
+        <ion-select-option>21km-30km</ion-select-option>
+        <ion-select-option>31km-40km</ion-select-option>
+        <ion-select-option>41km-50km</ion-select-option>
+      </ion-select>
+      </ion-item>
+      </ion-col>
+      </ion-row>
+      <br>
+      <ion-item>
+        <ion-icon name="cube-outline" slot="end"></ion-icon>
+        <ion-label position="floating">Quantity</ion-label>
+        <ion-input  color="success" placeholder="Quantity"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-icon name="image-outline" slot="end"></ion-icon>
+        <ion-input type='file' id='photo' name='photograph'></ion-input>
+      </ion-item>
+    <br>
+    <ion-button shape="round"  color="success" >back</ion-button>
+    <ion-button shape="round"  color="success" type="submit"(click)="cart()" >Buy</ion-button>
+  </ion-card>
+</div>
+</ion-content>

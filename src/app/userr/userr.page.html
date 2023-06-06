@@ -1,0 +1,350 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+     IONIC 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Ionic App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-segment [(ngModel)]="mysegment">
+      <ion-segment-button value=1>Registration</ion-segment-button>
+      <ion-segment-button value=2>login</ion-segment-button>
+      <ion-segment-button value=3>Forgot Password</ion-segment-button>
+      </ion-segment>
+      
+      <br/>
+      
+
+    <ion-card *ngIf="mysegment==1">
+      <ion-card-header>
+
+
+    <ion-card-title *ngIf="caseno==1">User Registration </ion-card-title>
+  
+    <ion-card-title *ngIf="caseno==2">Verify<ion-icon name="lock-closed"> </ion-icon> </ion-card-title>
+
+  </ion-card-header>
+  <ion-card-content *ngIf="caseno==1">
+    <form [formGroup]="userdata" (submit)="getdata1(userdata.value)">
+
+
+    <ion-list >
+      <BR>
+      <ion-item>
+        <ion-input type="text"[clearInput]="true"placeholder="Full Name" formControlName="fn">  
+        <div *ngIf="userdata.controls['fn'].invalid && (userdata.controls['fn'].dirty || userdata.controls['fn'].touched)" class="alert alert-danger">
+          <div *ngIf="userdata.controls['fn'].errors.required">
+          Fullname  is required.
+        </div>
+       </div>
+      </ion-input>
+       <!-- <ion-input type="text"[clearInput]="true"placeholder="Last Name" formControlName="ln">
+        <div *ngIf="userdata.controls['ln'].invalid && (userdata.controls['ln'].dirty || userdata.controls['ln'].touched)" class="alert alert-danger">
+          <div *ngIf="userdata.controls['ln'].errors.required">
+          Lastname  is required.
+        </div>
+
+      </ion-input>-->
+      <ion-icon name="person-circle"slot="end"color="success"></ion-icon>
+      </ion-item>
+      <ion-item>
+   <ion-input type="tel"[clearInput]="true"placeholder="Mobile Number" formControlName="mn">
+    <div *ngIf="userdata.controls['mn'].invalid && (userdata.controls['mn'].dirty || userdata.controls['mn'].touched)" class="alert alert-danger">
+      <div *ngIf="userdata.controls['mn'].errors.required">
+      Mobile No.  is required.
+    </div>
+    <div *ngIf="userdata.controls['mn'].errors.minlength">
+    Mobile no. must contain 10 characters..
+    </div>
+    </div>  
+  </ion-input><ion-icon name="call"slot="end"color="success"></ion-icon>
+  </ion-item>
+
+  <ion-item>
+   <ion-input type="email"[clearInput]="true"placeholder="Email"formControlName="email"> 
+    <div *ngIf="userdata.controls['email'].invalid && (userdata.controls['email'].dirty || userdata.controls['email'].touched)" class="alert alert-danger">
+    <div *ngIf="userdata.controls['email'].errors.required">
+    Email  is required.
+  </div>
+  <div *ngIf="userdata.controls['email'].errors.email">
+    Invalid Email Id.
+  </div>
+  </div> </ion-input><ion-icon name="mail"slot="end"color="success"></ion-icon>
+  </ion-item>
+   <ion-item>
+   <ion-input type="text"[clearInput]="true"placeholder="Username" formControlName="uname">
+    <div *ngIf="userdata.controls['uname'].invalid && (userdata.controls['uname'].dirty || userdata.controls['uname'].touched)" class="alert alert-danger">
+      <div *ngIf="userdata.controls['uname'].errors.required">
+      Username  is required.
+    </div>  
+    </div>
+  </ion-input><ion-icon name="person"slot="end"color="success"></ion-icon>
+   </ion-item>
+   <ion-item>
+    <ion-input type="password"[clearInput]="true"placeholder="Password" formControlName="pwrd">
+      <div *ngIf="userdata.controls['pwrd'].invalid && (userdata.controls['pwrd'].dirty || userdata.controls['pwrd'].touched)" class="alert alert-danger">
+        <div *ngIf="userdata.controls['pwrd'].errors.required">
+        Password  is required.
+      </div>
+      <div *ngIf="userdata.controls['pwrd'].errors.minlength">
+        Password  must contain atleast 8 characters.
+      </div>
+</div>
+    </ion-input><ion-icon name="key"slot="end"color="success"></ion-icon>
+    </ion-item>
+    <ion-item>
+    <ion-input type="password"[clearInput]="true"placeholder="Confirm Password" formControlName="conpwd">
+      <div *ngIf="userdata.controls['conpwd'].invalid && (userdata.controls['conpwd'].dirty || userdata.controls['conpwd'].touched)" class="alert alert-danger">
+        <div *ngIf="userdata.controls['conpwd'].errors.required">
+      Field required.
+      </div>
+      <div *ngIf="userdata.controls['conpwd'].errors.minlength">
+        Inavlid password
+      </div>
+</div>
+    </ion-input><ion-icon name="shield-checkmark"slot="end"color="success"></ion-icon>
+</ion-item>
+<ion-grid>
+<ion-row><br>
+<ion-col>
+
+<ion-button shape="round"type="button"color="success"size="medium"expand="block" type="submit">Register</ion-button>
+<ion-button shape="round" type="Reset" color="success"size="medium"expand="block">reset</ion-button>
+  </ion-col>
+</ion-row>   
+</ion-grid>  
+  </ion-list>
+
+
+
+</form>
+  </ion-card-content>
+
+  <ion-card-content *ngIf="caseno==2">
+    <br>
+    <form [formGroup]="userdata" (submit)="getdata2(userdata.value)">
+ <h4> Enter OTP Sent to your mobile number</h4>***458<br>
+ <ion-input type="password"placeholder="Enter 4 Digit OTP" maxlength="6" formControlName="otp">
+  <div *ngIf="userdata.controls['otp'].invalid && (userdata.controls['otp'].dirty || userdata.controls['otp'].touched)" class="alert alert-danger">
+    <div *ngIf="userdata.controls['otp'].errors.required">
+  OTP is required.
+  </div>
+  <div *ngIf="userdata.controls['otp'].errors.minlength">
+    OTP contain 4 characters..
+    </div>
+  </div>
+ </ion-input> <br>
+ <ion-button shape="round" type="submit"color="success"size="medium"expand="block"  > VERIFY</ion-button> <br>
+ <ion-button shape="round" type="submit"color="success"size="medium"expand="block"  > RESEND OTP</ion-button> <br>
+ <!--<a href="#">Resend OTP</a>-->
+ <br>
+</form>
+</ion-card-content>
+
+  </ion-card>
+
+
+<form [formGroup]="formdata"  (submit)="getdata(formdata.value)">
+    <ion-card id="i" *ngIf="mysegment==2">
+      <ion-label text-align="center"><b >LOGIN</b></ion-label>
+      <ion-card-content >
+       
+       
+        <ion-list >
+        <ion-item>
+          <ion-icon name="person-circle-outline" slot="start" ></ion-icon>
+          <ion-label position="floating">Email Id</ion-label>
+          <ion-input type="text" placeholder="Username/Email Id/PhoneNo." formControlName="emailid" ></ion-input>
+          <div *ngIf="formdata.controls['emailid'].invalid && (formdata.controls['emailid'].dirty || formdata.controls['emailid'].touched)" class="alert alert-danger">
+            <div *ngIf="formdata.controls['emailid'].errors.required">
+            Emailid  is required.
+          </div>
+          <div *ngIf="formdata.controls['emailid'].errors.email">
+            Invalid Email Id
+          </div>
+          
+        </div>
+        
+        </ion-item>
+    
+    
+       <ion-item>
+        <ion-icon name="key-outline" slot="start"></ion-icon>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" placeholder="Password" formControlName="pwd" ></ion-input>
+        <div *ngIf="formdata.controls['pwd'].invalid && (formdata.controls['pwd'].dirty || formdata.controls['pwd'].touched)" class="alert alert-danger">
+          <div *ngIf="formdata.controls['pwd'].errors.required">
+          Password  is required.
+        </div>
+        <div *ngIf="formdata.controls['pwd'].errors.minlength">
+          password is of atleast 8 characters...
+        </div>
+      </div>
+     </ion-item>
+    
+    
+     <ion-item>
+      <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+      <ion-label position="floating">User type</ion-label>
+     <ion-select formControlName="ut">
+      <ion-select-option>Farmer</ion-select-option>
+      <ion-select-option>Customer</ion-select-option>
+      </ion-select>
+      <div *ngIf="formdata.controls['ut'].invalid && (formdata.controls['ut'].dirty || formdata.controls['ut'].touched)" class="alert alert-danger">
+        <div *ngIf="formdata.controls['ut'].errors.required">
+        Usertype  is required.
+      </div>
+      </div>
+    </ion-item>
+    
+    <ion-item>
+      <ion-img src="assets/images/cap.jpeg"/>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Enter Captcha here</ion-label>
+      <ion-input placeholder="captcha" formControlName="cap"  ></ion-input>
+      <div *ngIf="formdata.controls['cap'].invalid && (formdata.controls['cap'].dirty || formdata.controls['cap'].touched)" class="alert alert-danger">
+        <div *ngIf="formdata.controls['cap'].errors.required">
+        Captcha  is required.
+      </div>
+      </div>
+    
+    </ion-item>
+    
+    <ion-item>
+      <ion-button color="success" shape="round"(click)="home()"> <ion-icon name="log-in-outline"></ion-icon>
+      Login</ion-button>
+      <ion-button color="success" shape="round" type="submit"> <ion-icon name="help-circle-outline" ></ion-icon>
+        Forgot Password</ion-button>
+    </ion-item>
+    
+    
+      </ion-list>  
+        
+  
+    </ion-card-content>
+  </ion-card>
+</form>
+
+  <div *ngIf="mysegment==3">
+    <ion-card *ngIf="caseno==1 || caseno==2">
+   <ion-card-header  align="center">
+   <ion-icon name="alert-circle" color="light"  size="large"></ion-icon>
+  <ion-card-title color="success"> Forgot Password </ion-card-title>    
+  </ion-card-header>
+  <br>
+   <ion-card-content>
+    <form [formGroup]="fordata" (submit)="getdata3(fordata.value)">
+    <ion-list>
+  <ion-item fill="outline" >
+  <ion-icon name="mail" slot="start" color="success"></ion-icon>
+  <ion-label position="floating">Enter Your E-mail/Phone Number</ion-label>
+  <ion-input type="text" [clearInput]="true" placeholder="E-mail or Phone number"formControlName="emailid">   
+    <div *ngIf="fordata.controls['emailid'].invalid && (fordata.controls['emailid'].dirty || fordata.controls['emailid'].touched)" class="alert alert-danger">
+      <div *ngIf="fordata.controls['emailid'].errors.required">
+      Email  is required.
+    </div>
+    <div *ngIf="fordata.controls['emailid'].errors.email">
+      Invalid Email Id.
+    </div>
+    </div>
+    
+  </ion-input>
+   </ion-item><br>
+  <ion-button expand="block" shape="round" color="success" size="3" type="submit">Next</ion-button>                           
+  </ion-list>
+</form>
+  </ion-card-content>
+  </ion-card>
+  
+     
+  <ion-card *ngIf="caseno==3">
+  <ion-card-header >
+   <ion-icon name="alert-circle" size="large"></ion-icon>
+   <ion-card-title > Account Recovery </ion-card-title>
+               
+  </ion-card-header><br>
+  <ion-card-content>
+    <form [formGroup]="fordata" (submit)="getdata4(fordata.value)">
+
+   <ion-list >
+    <ion-text ><h2>An e-mail with verification code has been sent to *@gmail.com</h2></ion-text>            
+  <ion-item fill="outline" >
+  <ion-icon name="mail" slot="start" color="success"></ion-icon>
+  <ion-label position="floating">Enter Your Code</ion-label>
+  <ion-input type="number" [clearInput]="true"  placeholder="Enter your code"  formControlName="c">
+    <div *ngIf="fordata.controls['c'].invalid && (fordata.controls['c'].dirty || fordata.controls['c'].touched)" class="alert alert-danger">
+      <div *ngIf="fordata.controls['c'].errors.required">
+      this field  is required.
+    </div>
+    <div *ngIf="fordata.controls['c'].errors.minlength">
+      invalid code...
+    </div>
+    </div>
+    
+  </ion-input>
+  </ion-item><br/>           
+  <ion-button expand="block" shape="round" color="success" size="3"   type="submit">submit</ion-button>
+  </ion-list>
+  </form>
+  </ion-card-content>
+  </ion-card>  
+   <ion-card *ngIf="caseno==4">
+    <ion-card-header >
+   <ion-icon name="people-circle" size="large"  color="success">
+  </ion-icon>
+  <ion-card-title color="success" >Reset Password</ion-card-title>
+   <ion-card-subtitle></ion-card-subtitle>
+   </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="fordata" (submit)="getdata5(fordata.value)">
+
+      <br>
+   <ion-list>
+  <ion-item fill="outline" >
+   <ion-icon name="key" slot="start" color="success"></ion-icon>
+   <ion-label position="floating">Enter New Password</ion-label>
+   <ion-input type="password"[clearInput]="true" placeholder="Enter New Password" formControlName="newpwd">
+
+    <div *ngIf="fordata.controls['newpwd'].invalid && (fordata.controls['newpwd'].dirty || fordata.controls['newpwd'].touched)" class="alert alert-danger">
+      <div *ngIf="fordata.controls['newpwd'].errors.required">
+      Password  is required.
+    </div>
+    <div *ngIf="fordata.controls['newpwd'].errors.minlength">
+      Password must contain atleast 8 characters...
+    </div>
+    </div>
+    
+   </ion-input>
+    </ion-item><hr/>
+    <ion-item fill="outline" >
+    <ion-icon name="key" slot="start" color="success"></ion-icon>
+    <ion-label position="floating">Re-enter New Password</ion-label>
+  <ion-input type="password" [clearInput]="true"placeholder="Re-enter New Password"formControlName="repwd">
+    <div *ngIf="fordata.controls['repwd'].invalid && (fordata.controls['repwd'].dirty || fordata.controls['repwd'].touched)" class="alert alert-danger">
+      <div *ngIf="fordata.controls['repwd'].errors.required">
+      Password  is required.
+    </div>
+    <div *ngIf="fordata.controls['repwd'].errors.minlength">
+      Invalid password.
+    </div>
+    </div>
+  </ion-input>
+  </ion-item>
+     <hr>
+     <br>
+     <ion-button expand="block" shape="round" type="success" size="medium" type="submit" >Save Changes</ion-button>       
+    </ion-list>
+      </form>
+    </ion-card-content>        
+    </ion-card>   
+  </div>
+</div>

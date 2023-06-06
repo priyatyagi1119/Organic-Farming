@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Payment Details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div id="container">
+    <ion-card *ngIf="caseno==0">
+<img alt="Silhouette of mountains"src="assets/icon/organic.jpg"/>
+  <ion-item fill="outline">
+    <ion-label position="floating">Payment Mode</ion-label>
+    <ion-select>
+      <ion-select-option >Online Payment</ion-select-option>
+      <ion-select-option >Card Payment</ion-select-option>
+      <ion-select-option >Cash On Delivery</ion-select-option>
+      </ion-select> 
+    </ion-item> <BR>
+      <ion-card >
+        <ion-card-header >
+         <h2> Payment  Details</h2>
+         <ion-grid>
+          <ion-row>
+            <ion-col>
+              Price
+            </ion-col>
+            <ion-col>
+              200/-
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+            </ion-col>
+            <ion-col>
+              <B>Have a Promo Code?</B>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Discount
+            </ion-col>
+            <ion-col>
+              0.0
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Delivery
+            </ion-col>
+            <ion-col>
+              50/-
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Total Price
+            </ion-col>
+            <ion-col>
+              250/-
+            </ion-col>
+          </ion-row>
+         </ion-grid>
+    <br>
+
+  </ion-card-header>
+  </ion-card>
+      <ion-button color="success" type="submit" (click)="setcase(2)">PLACE ORDER</ion-button>
+    </ion-card>
+    
+      <ion-card *ngIf="caseno==2" >
+<div>
+  <img src="assets/icon/placed.jpg" height="200px"/>
+  <h1><b>!!ORDER PLACED SUCCESSFULLY!!</b></h1>
+</div>
+      </ion-card>
+ 

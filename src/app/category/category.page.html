@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<div id="container">
+  <ion-card-header collapse="condense" color="success">
+    <ion-card-title size="large"><b>Item Category</b></ion-card-title>
+  </ion-card-header>
+  <br> 
+    <ion-row>
+      <ion-card id="c">
+      <ion-col size="4">
+        <img src="assets/icon/vege.jpg"  (click)="additem()"/>
+        <br>
+        <ion-card-content><b>VEGES</b></ion-card-content>
+      </ion-col>
+      </ion-card>
+      <ion-card id="c">
+      <ion-col size="4">
+        <img src="assets/icon/fruit1.jpg"  (click)="additem()"/>
+        <br>
+        <ion-card-content><b>FRUITS</b></ion-card-content>
+      </ion-col>
+      </ion-card>
+      <ion-card id="c">
+        <ion-col size="4">
+          <img src="assets/icon/flow.jpg" height="100px" width="100px" (click)="additem()"/>
+          <br>
+        <ion-card-content><b>FLOWERS</b></ion-card-content>
+        </ion-col>
+        </ion-card>
+    </ion-row>
+    <br>
+    <ion-row>
+      <ion-card id="c">
+      <ion-col size="4">
+        <img src="assets/icon/mill.jpg"  (click)="additem()"/>
+        <br>
+        <ion-card-content><b>MILLETS</b></ion-card-content>
+      </ion-col>
+      </ion-card>
+      <ion-card id="c">
+      <ion-col size="4">
+      <img src="assets/icon/plan.jpg"  (click)="additem()"/>
+      <br>
+        <ion-card-content><b>PLANTS</b></ion-card-content>
+        </ion-col>
+      </ion-card>
+      <ion-card id="c">
+        <ion-col size="4">
+          <img src="assets/icon/wheate.jpg" (click)="additem()"/>
+          <br>
+        <ion-card-content><b>GRAINS</b></ion-card-content>
+        </ion-col>
+        </ion-card>
+    </ion-row>
+</div>
+</ion-content>
+ 
